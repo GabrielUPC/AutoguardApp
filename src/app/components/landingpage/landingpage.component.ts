@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing',
   templateUrl: './landingpage.component.html',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class LandingpageComponent {
+  constructor(private router: Router) {}
   slideOffset: number = 0;
 
   testimonios = [
@@ -50,9 +51,10 @@ export class LandingpageComponent {
       this.slideOffset -= 27;
   }
 
-  goToLogin() {
-    window.location.href = '/login';
-  }
+ goToLogin() {
+  this.router.navigate(['/login']);
+}
+
 
   getSlideStyle() {
     return {
