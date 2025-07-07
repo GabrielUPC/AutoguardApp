@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-landing',
+  standalone: true, // 👈 si usas standalone
+  imports: [RouterModule], // 👈 agrégalo aquí
   templateUrl: './landingpage.component.html',
-  styleUrls: ['./landingpage.component.css'],
+  styleUrls: ['./landingpage.component.css']
 })
 
 export class LandingpageComponent {
